@@ -19,7 +19,7 @@ jobs:
         password: Berane983
         script: |
           cd /srv/www/
-          docker-compose down
+          docker-compose down --volumes
           rm -r -f /srv/www/angular/
           mkdir -p /srv/www/angular/
     - name: Reconnect via ssh to add docker-compose/dockerfile and run server 
