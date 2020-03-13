@@ -32,5 +32,5 @@ jobs:
         script: |
           git clone -b master https://02a8cd789e7ac05dc4852b7272b9869cf489ddb7:x-oauth-basic@github.com/cpcaballero/roofy-angular.git /srv/www/angular
           cd /srv/www/
-          docker-commpose up -d --build
+          docker-compose up -d --build
           docker ps -a 
