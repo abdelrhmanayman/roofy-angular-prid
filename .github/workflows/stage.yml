@@ -1,0 +1,39 @@
+name: Push stage to main stage 
+
+on: 
+  push:
+    branches: 
+      - stage
+jobs:
+  master-build:
+    if: contains(github.ref, 'stage')
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Connect via ssh to put down docker-compose server 
+      uses: appleboy/ssh-action@master        
+      with:
+        host: 164.68.126.191
+        username: root
+        port: 22
+        password: Berane983
+        script: |
+          cd /srv/www/roofy/stage/
+          docker-compose down --volumes
+          rm -r -f /srv/www/roofy/stage/
+          mkdir -p /srv/www/roofy/stage/
+    - name: Reconnect via ssh to add docker-compose/dockerfile and run server 
+      uses: appleboy/ssh-action@master        
+      with:
+        host: 164.68.126.191
+        username: root
+        port: 22
+        password: Berane983
+        script: |
+          git clone -b stage https://02a8cd789e7ac05dc4852b7272b9869cf489ddb7:x-oauth-basic@github.com/cpcaballero/roofy-angular.git /srv/www/roofy/stage
+          cd /srv/www/roofy/docker-files
+          cp stage-docker-compose.yml /srv/www/roofy/stage
+          cp default.conf /srv/www/roofy/stage
+          cd ../stage
+          docker-compose -f  stage-docker-compose.yml up -d --build
+          docker ps -a 
