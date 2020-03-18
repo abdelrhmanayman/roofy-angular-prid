@@ -1,4 +1,4 @@
-name: Push master to main prod
+name: Push master to main prod 
 
 on: 
   push:
@@ -18,10 +18,10 @@ jobs:
         port: 22
         password: Berane983
         script: |
-          cd /srv/www/
+          cd /srv/www/roofy/prod/
           docker-compose down --volumes
-          rm -r -f /srv/www/angular/
-          mkdir -p /srv/www/angular/
+          rm -r -f /srv/www/roofy/prod/
+          mkdir -p /srv/www/roofy/prod/
     - name: Reconnect via ssh to add docker-compose/dockerfile and run server 
       uses: appleboy/ssh-action@master        
       with:
@@ -30,7 +30,10 @@ jobs:
         port: 22
         password: Berane983
         script: |
-          git clone -b master https://02a8cd789e7ac05dc4852b7272b9869cf489ddb7:x-oauth-basic@github.com/cpcaballero/roofy-angular.git /srv/www/angular
-          cd /srv/www/
-          docker-compose up -d --build
+          git clone -b master https://02a8cd789e7ac05dc4852b7272b9869cf489ddb7:x-oauth-basic@github.com/cpcaballero/roofy-angular.git /srv/www/roofy/prod
+          cd /srv/www/roofy/docker-files
+          cp prod-docker-compose.yml /srv/www/roofy/prod
+          cp default.conf /srv/www/roofy/prod
+          cd ../prod
+          docker-compose -f  prod-docker-compose.yml up -d --build
           docker ps -a 
