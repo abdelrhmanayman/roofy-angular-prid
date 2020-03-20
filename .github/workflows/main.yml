@@ -19,7 +19,7 @@ jobs:
         password: Berane983
         script: |
           cd /srv/www/roofy/prod/
-          docker-compose down --volumes
+          docker-compose -f  prod-docker-compose.yml down --volumes
           rm -r -f /srv/www/roofy/prod/
           mkdir -p /srv/www/roofy/prod/
     - name: Reconnect via ssh to add docker-compose/dockerfile and run server 
