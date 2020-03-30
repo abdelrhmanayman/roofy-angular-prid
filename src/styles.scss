@@ -1,0 +1,141 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* You can add global styles to this file, and also import other style files */
+
+@import 'pages-style';
+body,
+html,
+.wrapper,
+.container-fluid {
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+button {
+    box-shadow: none!important;
+}
+
+.form-input {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.form-input:focus {
+    outline: none;
+}
+
+.orange-btn {
+    background: #ff4f01;
+    border-radius: 8px;
+    padding: 10px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.orange-btn:hover {
+    background: #0124a7;
+}
+
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.radio-group-img {
+    margin-bottom: 15px;
+}
+
+.form-group {
+    text-align: center;
+    padding-bottom: 130px;
+}
+
+.form-vertical-btns {
+    width: 30%;
+    margin: 0 auto;
+}
+
+.form-horizontal-btns {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.form-horizontal-2btns {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.form-horizontal-5btns {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.form-horizontal-7btns {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.form-horizontal-6btns {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.form-text-input {
+    width: 70%;
+    border: none;
+    border: 1px solid #9c9c9c;
+    outline: none;
+}
+
+.form-button-control {
+    position: absolute;
+    bottom: 0;
+    background: #f1f1f1;
+    width: 100%;
+    right: 0;
+    .btn-ctrl {
+        height: 115px;
+        width: 100%;
+        background: transparent;
+        text-align: center;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 22px;
+        color: rgba(7, 27, 86, 255);
+        border: none;
+        outline: none;
+    }
+    .btn-ctrl:focus,
+    .btn-ctrl:active {
+        border: none!important;
+        outline: none!important;
+    }
+    img {
+        margin-top: -5px;
+        margin-right: 5px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .col {
+        -ms-flex-preferred-size: inherit;
+        flex-basis: inherit;
+        -ms-flex-positive: inherit;
+        flex-grow: inherit;
+        max-width: 100%;
+    }
+    .form-vertical-btns,
+    .form-horizontal-btns,
+    .form-horizontal-2btns,
+    .form-horizontal-5btns,
+    .form-horizontal-7btns,
+    .form-horizontal-6btns {
+        width: 90%;
+    }
+}

@@ -1,0 +1,289 @@
+.header {
+    background: url(/assets/header-bg.png);
+    background-size: cover;
+    .header-body {
+        padding: 254px 0 120px 0;
+        color: rgba(1, 36, 167, 255);
+        .know {
+            font-size: 43.24702px;
+            font-weight: 400;
+            margin-bottom: 0;
+        }
+        .change {
+            font-size: 30.24702px;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+        .we {
+            font-size: 54.24702px;
+            font-weight: 900;
+        }
+        .form-wrap {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .submit-address {
+            .image-address {
+                float: left;
+                width: 30%;
+                img {
+                    margin-right: 20px;
+                }
+            }
+            .text-address {
+                float: right;
+                width: 70%;
+                font-size: 30px;
+                font-weight: 400;
+            }
+        }
+        .form-part {
+            form {
+                width: 100%;
+                float: left;
+                padding: 50px 0;
+            }
+            .insurance {
+                float: left;
+                font-size: 28px;
+                font-weight: 400;
+                text-align: center;
+                width: 100%;
+            }
+        }
+    }
+}
+
+.middle {
+    padding: 50px 0;
+    box-shadow: 0 1px 0 4px #ccc;
+    .items {
+        padding: 80px 0 0;
+    }
+    .middle-box {
+        display: flex;
+        flex-direction: column;
+        img {
+            width: 60px;
+            height: auto;
+            margin-top: 15px;
+        }
+    }
+    .moddle-box-start {
+        align-self: flex-start;
+    }
+    .moddle-box-center {
+        align-self: center;
+    }
+    .moddle-box-end {
+        align-self: flex-end;
+    }
+    .title-middle {
+        font-size: 40px;
+        color: rgba(11, 50, 104, 255);
+        text-align: center;
+        margin-bottom: 0;
+        margin-top: 5px;
+        font-weight: 400;
+    }
+    .sub-title-middle {
+        font-size: 25px;
+        color: rgba(11, 50, 104, 255);
+        font-weight: 400;
+    }
+    .icon {
+        text-align: right;
+    }
+    .text {
+        text-align: left;
+    }
+    .time {
+        color: rgba(255, 77, 0, 255);
+        font-size: 32px;
+        font-weight: 900;
+        margin-bottom: 0;
+    }
+    .time-rev {
+        color: rgba(255, 77, 0, 255);
+        font-size: 45px;
+        font-weight: 900;
+        margin-bottom: 0;
+        height: 45px;
+        margin-top: -10px;
+    }
+    .time-rev-sub {
+        color: rgba(255, 77, 0, 255);
+        font-size: 30px;
+        font-weight: 900;
+        margin-bottom: 0;
+        height: 30px;
+        margin-bottom: 5px;
+    }
+    .time-text-rev {
+        font-size: 19px;
+        color: rgba(11, 50, 104, 255);
+        font-weight: 400;
+    }
+    .time-text {
+        font-size: 28px;
+        color: rgba(11, 50, 104, 255);
+        font-weight: 400;
+    }
+}
+
+.our-clients {
+    padding: 90px 0 160px;
+    background: url(/assets/testimonails.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    .testimonails {
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        color: rgba(1, 36, 167, 255);
+        text-align: center;
+    }
+    .testimonails-title {
+        font-size: 50px;
+        font-weight: 900;
+        color: rgba(1, 36, 167, 255);
+        text-align: center;
+        margin-bottom: 80px;
+    }
+    .box {
+        border: 1px solid #ccc;
+        box-shadow: 1px 2px 3px 2px #ccc;
+        background: #fff;
+        padding: 50px 40px;
+        width: 100%;
+        float: left;
+        .quote {
+            font-weight: 400;
+            padding-top: 20px;
+            margin-bottom: 0;
+        }
+        hr {
+            width: 40px;
+            float: left;
+            background: rgba(255, 79, 1, 255);
+        }
+        .name-block {
+            float: left;
+            width: 100%;
+            .name {
+                color: rgba(255, 79, 1, 255);
+                margin-bottom: 0;
+            }
+            .title {
+                margin-bottom: 0;
+                font-size: 15px;
+                text-transform: uppercase;
+                font-weight: 400;
+            }
+        }
+    }
+}
+
+.subscribe {
+    background: #0124a1;
+    padding: 60px 0;
+    span {
+        color: #fff;
+        font-size: 30px;
+        margin-right: 25px;
+    }
+    .email {
+        padding: 10px 25px;
+        font-size: 16px;
+        border: 2px;
+        width: 60%;
+        margin-right: 5px;
+    }
+    .sbm-btn {
+        border: 1px solid #fff;
+        background: #071b56;
+        color: #fff;
+        padding: 9px 30px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    .sbm-btn:hover {
+        background: #ff4f01;
+    }
+}
+
+.footer {
+    font-size: 16px;
+    color: rgba(182, 187, 204, 255);
+    padding: 50px 0;
+    .links {
+        margin-bottom: 10px;
+        a {
+            margin: 0 10px;
+        }
+    }
+    .cr {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 992px) {
+    .header-list {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .col-res {
+        margin-top: 20px;
+    }
+    .header {
+        .header-body {
+            padding: 170px 0 0;
+        }
+        .header-body {
+            .know,
+            .change {
+                font-size: 25px!important;
+            }
+            .we {
+                font-size: 35px!important;
+            }
+            .submit-address {
+                .text-address {
+                    font-size: 25px!important;
+                }
+            }
+        }
+    }
+    .main-headline {
+        text-align: center;
+    }
+    .middle {
+        .title-middle {
+            font-size: 30px;
+        }
+        .icon,
+        .text {
+            text-align: center!important;
+        }
+        .text {
+            margin-top: 15px;
+        }
+    }
+    .newsletter-headline {
+        text-align: center!important;
+        margin-bottom: 20px;
+    }
+    .newsletter-form {
+        text-align: center;
+        .sbm-btn {
+            margin-top: 20px;
+        }
+    }
+    .our-clients {
+        .testimonials-title {
+            font-size: 40px;
+        }
+    }
+}
