@@ -23,6 +23,7 @@
     "@angular/platform-browser": "~9.0.6",
     "@angular/platform-browser-dynamic": "~9.0.6",
     "@angular/router": "~9.0.6",
+    "@angular/service-worker": "~8.0.0",
     "@cloudinary/angular-5.x": "^1.2.0-rc.0",
     "@ng-bootstrap/ng-bootstrap": "^6.0.0",
     "cloudinary-core": "^2.8.1",
