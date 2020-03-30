@@ -1,0 +1,182 @@
+<div class="wrapper-home">
+    <div class="inner">
+        <div class="header">
+            <app-page-navigation></app-page-navigation>
+
+            <div class="header-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 main-headline">
+                            <p class="know">Don't know how to</p>
+                            <p class="change">charge for insurance work?</p>
+                            <p class="we">WE DO.</p>
+                        </div>
+
+                        <div [ngClass]="'address col-md-6 form-part'">
+                            <div class="form-wrap">
+                                <h1 class="submit-address">
+                                    <span class="image-address text-right">
+                                        <img src="/assets/point.png" alt="point">
+                                    </span>
+
+                                    <span class="text-left text-address">$150/estimate<br> <small>including EagleView &
+                                            Xactimate</small></span>
+                                </h1>
+                            </div>
+
+                            <form (ngSubmit)="submit(stepOne)" [formGroup]="stepOne" class="text-center">
+                                <input ngx-google-places-autocomplete [options]='options' #placesRef="ngx-places"
+                                    (onAddressChange)="handleAddressChange($event)" formControlName="address"
+                                    type="text" class="form-input mr-2">
+                                <input class="orange-btn" type="submit">
+                            </form>
+
+                            <p class="insurance mt-4">Insurance-approved roof estimates... <em>FAST!</em></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="middle">
+            <h2 class="text-center title-middle"><strong>No cost</strong> for revisions for 30 days</h2>
+            <h3 class="text-center sub-title-middle">(call us anytime and get real live people)</h3>
+
+            <div class="container">
+                <div class="items">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="middle-box">
+                                <div class="middle-box-start">
+                                    <div class="row">
+                                        <div class="icon col-md-4">
+                                            <img src="/assets/clock.png" class="img-fluid" alt="clock">
+                                        </div>
+
+                                        <div class="text col-md-8">
+                                            <p class="time">24h</p>
+                                            <p class="time-text">or less</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="middle-box">
+                                <div class="middle-box-center">
+                                    <div class="row">
+                                        <div class="icon col-md-4">
+                                            <img src="/assets/bill.png" class="img-fluid" alt="bill">
+                                        </div>
+
+                                        <div class="text col-md-8">
+                                            <p class="time">50-80%</p>
+                                            <p class="time-text">cost savings</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="middle-box">
+                                <div class="middle-box-end">
+                                    <div class="row">
+                                        <div class="icon col-md-4">
+                                            <img src="/assets/bank.png" class="img-fluid" alt="bank">
+                                        </div>
+
+                                        <div class="text col-md-8">
+                                            <p class="time">FREE Revisions</p>
+                                            <p class="time-text">(up to 30 days)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="our-clients">
+            <h5 class="text-center testimonails">our testimonails</h5>
+            <h4 class="text-center testimonails-title">What our clients say about us</h4>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="box">
+                            <img src="/assets/quote.png" alt="quote">
+                            <p class="quote">At first I thought it was too good to be true, but then Roofy delivered and
+                                they delivered it well! Give them a try, you won't be disappointed.</p>
+                            <hr />
+
+                            <div class="name-block">
+                                <p class="name">Josh Skogen</p>
+                                <p class="title">Skogen Construction LLC</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-res">
+                        <div class="box">
+                            <img src="/assets/quote.png" alt="quote">
+                            <p class="quote">I've never seen anything like it in 43 years of roofing. There's just
+                                nothing like it out there today. There's no doubt.</p>
+                            <hr />
+
+                            <div class="name-block">
+                                <p class="name">Jack Kappler<br> <small>Project Manager</small></p>
+                                <p class="title">CMR Construction & Roofing LLC</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-res">
+                        <div class="box">
+                            <img src="/assets/quote.png" alt="quote">
+                            <p class="quote">I had no idea I could get a roof estimate done so easy. Now I save time,
+                                money and I get to maximize my profits! Thank you, Roofy!</p>
+                            <hr />
+
+                            <div class="name-block">
+                                <p class="name">Robert Boyda</p>
+                                <p class="title">Massive Roofing Co.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--<div class="subscribe">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5 text-right newsletter-headline">
+                        <span>Subscribe to our newsletter</span>
+                    </div>
+
+                    <div class="col-md-7 newsletter-form">
+                        <form>
+                            <input type="text" class="email" placeholder="Email Address">
+                            <input type="submit" class="sbm-btn" value="Subscribe Now!">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+
+        <div class="footer text-center">
+            <p class="links">
+                <a routerLink="/pages/terms-of-use/" routerLinkActive="active-link">Terms of Use</a>
+                <a routerLink="/pages/privacy-policy/" routerLinkActive="active-link">Privacy Policy</a>
+                <a routerLink="/pages/cookie-policy/" routerLinkActive="active-link">Cookie Policy</a>
+            </p>
+
+            <p class="cr">&copy; 2020 Roofy LLC</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+<app-questionnaire>
+    <form [ngClass]="'additional_information container'" (ngSubmit)="submit(stepTwentyseven)" [formGroup]="stepTwentyseven">
+        <div class="text-center">
+            <app-form-header text="Things we need to know (pipe jacks, turtle vents, additional penetrations, etc.)">
+            </app-form-header>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <textarea formControlName="thingsWeNeedToKNow" class="roofy-input form-text-input"></textarea><br>
+
+                    <small class="validation-alert"
+                        *ngIf="stepTwentyseven.get('thingsWeNeedToKNow').touched && stepTwentyseven.get('thingsWeNeedToKNow').hasError('required')">
+                        This field is required!
+                    </small>
+                </div>
+            </div>
+
+            <app-form-header text="Please provide any additional questions, comments, observations or
+                customizations in respect to this order."></app-form-header>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <textarea formControlName="additionalInformation" class="roofy-input form-text-input"></textarea>
+                </div>
+
+                <div class="col-lg-12 mt-4">
+                    <p class="text-danger" *ngIf="errorMessage">{{ errorMessage }}</p>
+                </div>
+            </div>
+        </div>
+
+        <!--<app-navigation-ctrl hasBack="true"></app-navigation-ctrl>-->
+
+        <div class="form-button-control">
+            <div class="row">
+                <div class="form-button-control">
+                    <div class="row">
+                        <div class="col-6">
+                            <button type="button" (click)="back()" class="btn btn-ctrl"><img src="/assets/back.png" />
+                                Back</button>
+                        </div>
+                        <div class="col-6">
+                            <button [disabled]="stepTwentyseven.invalid" type="submit" class="btn btn-ctrl"><img
+                                    src="/assets/next.png" /> Next</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</app-questionnaire>

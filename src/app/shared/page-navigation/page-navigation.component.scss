@@ -1,0 +1,116 @@
+.sticky-header {
+    position: fixed;
+    width: 100%;
+    z-index: 99999999;
+    background-color: #FFF;
+    border-bottom: 1px solid #ccc;
+}
+
+.main-navigation {
+    margin: 20px 0;
+    .header-list {
+        right: 15px;
+        a {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0 65px;
+            font-size: 25px;
+            color: rgba(7, 27, 86, 255);
+        }
+        a:hover,
+        a.active-link {
+            color: #ff4f01;
+        }
+    }
+    .header-list:last-child {
+        a {
+            margin-right: 0;
+        }
+    }
+    .logo {
+        width: 200px;
+    }
+    .logo img {
+        width: 100%;
+    }
+}
+
+.mobile-btn {
+    display: none;
+}
+
+a {
+    color: #0124a7;
+}
+
+a:hover {
+    color: #ff4f01;
+    text-decoration: none;
+}
+
+.header-info {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+    font-size: 18px;
+    color: rgba(7, 27, 86, 255);
+    .contact-data {
+        a {
+            margin-right: 15px;
+        }
+        a:last-child {
+            margin-right: 0;
+        }
+        img {
+            margin-right: 5px;
+            margin-top: -3px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .mobile-btn {
+        display: block;
+        cursor: pointer;
+        background: transparent;
+        border: 1px solid #0124a1;
+        padding: 10px;
+        position: absolute;
+        right: 15px;
+        top: 10px;
+        .line {
+            width: 25px;
+            height: 4px;
+            background: #0124a1;
+            display: block;
+            margin: 4px 0;
+        }
+    }
+    .sticky-header {
+        background: transparent;
+        .header-info,
+        .main-navigation {
+            background: #FFF;
+            margin: 0;
+            padding: 10px 0;
+        }
+    }
+    .mobile-nav {
+        height: 100vh;
+        background: rgba(255,255,255,0.9);
+        ul {
+            border-top: 1px solid #0124a7;
+            padding: 0 20px;
+            margin: 0;
+            list-style-type: none;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            li {
+                padding: 10px 0;
+                font-size: 30px;
+                a:hover,
+                a.active-link {
+                    color: #ff4f01;
+                }
+            }
+        }
+    }
+}

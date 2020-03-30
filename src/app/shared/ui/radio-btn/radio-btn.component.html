@@ -1,0 +1,4 @@
+<div (click)="select(value, id)" class="radio-button" [ngClass]="changecss" [style.padding]="padding">
+    <img *ngIf="changecss === 'active' && activeIcon && inactiveIcon" [src]="activeIcon" />
+    <img *ngIf="changecss === 'inactive'  && activeIcon && inactiveIcon" [src]="inactiveIcon" /> {{value}}
+</div>

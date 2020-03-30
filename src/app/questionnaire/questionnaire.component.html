@@ -1,0 +1,47 @@
+<div class="questionnaire">
+    <div class="content">
+        <div class="row">
+            <div class="col-3 col-full">
+                <div class="side-menu">
+                    <div class="header">
+                        <div class="logo">
+                            <a routerLink="/" title="Roofy.com">
+                                <img class="img-fluid" src="/assets/logo.png" alt="logo">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="tasks">
+                        <div class="fp-link" routerLink="/" routerLinkActive="active-link">
+                            Address
+                        </div>
+                        <div class="fp-link" routerLink="/front-picture" routerLinkActive="active-link">
+                            Front Picture
+                        </div>
+                        <div class="bp-link" routerLink="/back-picture" routerLinkActive="active-link">
+                            Back Picture
+                        </div>
+                        <div class="rp-link" routerLink="/rear-picture" routerLinkActive="active-link">
+                            Rear Picture
+                        </div>
+                        <div class="ap-link" routerLink="/additional-picture" routerLinkActive="active-link">
+                            Additional Picture
+                        </div>
+                        <div class="ai-link" routerLink="/additional-information" routerLinkActive="active-link">
+                            Additional Information
+                        </div>
+                    </div>
+
+                    <div class="help">
+                        <a href="tel:810ESTIMAT"><img src="/assets/question.png" />Need Help</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-9 col-full">
+                <div class="questions">
+                    <ng-content></ng-content>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
