@@ -34,7 +34,7 @@ jobs:
           cd /srv/www/roofy/docker-files
           cp prod-docker-compose.yml /srv/www/roofy/prod
           cp default.conf /srv/www/roofy/prod
-          cp stage-roofy-frontend-dockerfile.dev /srv/www/roofy/stage
+          cp prod-roofy-frontend-dockerfile.dev /srv/www/roofy/prod
           cd ../prod
           docker-compose -f  prod-docker-compose.yml up -d --build --force-recreate
           docker ps -a 
