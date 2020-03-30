@@ -3,11 +3,15 @@ const express = require("express");
 const compression = require("compression");
 
 const _app_folder = 'dist/web';
-var _port = 4200;
+var _port = 4190;
 
   
 const app = express();
 app.use(compression());
+
+if ( app.get('env') === 'stage' ) {
+  _port = 4200;
+}
 
 
 // ---- SERVE STATIC FILES ---- //
