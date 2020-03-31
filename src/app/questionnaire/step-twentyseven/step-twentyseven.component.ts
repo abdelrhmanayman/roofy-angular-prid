@@ -13,6 +13,7 @@ export class StepTwentysevenComponent implements OnInit {
   stepTwentyseven: FormGroup;
 
   errorMessage: any;
+  successMessage: any;
   results: any;
 
   constructor(
@@ -57,13 +58,17 @@ export class StepTwentysevenComponent implements OnInit {
 
     this.questionnaireService.submitQuestionnaire(this.questionnaireService.questionnaireForm)
       .subscribe((succ) => {
-        localStorage.clear();
-        window.location.href = 'https://payment.roofy.com/order-estimate/';
+        this.successMessage = 'Please wait. Redirecting...'
+        setTimeout(() => {
+          this.successMessage = false;
+          localStorage.clear();
+          window.location.href = 'https://payment.roofy.com/order-estimate/';
+        }, 6000)
       }, (err) => {
         this.errorMessage = 'This form has not been submitted. Please try again.'
         setTimeout(() => {
           this.errorMessage = false;
-          this.router.navigate(['welcome/home']);
+          this.router.navigate(['/']);
         }, 6000)
       }
       );
