@@ -41,17 +41,17 @@ export class StepTwentysevenComponent implements OnInit {
   // Submits step twentyseven form
   submit({ value, valid }) {
     let address = localStorage.getItem('address');
-    let front_picture = localStorage.getItem('front_picture');
-    let back_picture = localStorage.getItem('back_picture');
-    let rear_picture = localStorage.getItem('rear_picture');
-    let additional_picture = localStorage.getItem('additional_picture');
+    let front_elevation = localStorage.getItem('front_elevation');
+    let right_elevation = localStorage.getItem('right_elevation');
+    let rear_elevation = localStorage.getItem('rear_elevation');
+    let left_elevation = localStorage.getItem('left_elevation');
 
     let object = {
       "address": address,
-      "front_picture": front_picture,
-      "back_picture": back_picture,
-      "rear_picture": rear_picture,
-      "additional_picture": additional_picture
+      "front_elevation": front_elevation,
+      "right_elevation": right_elevation,
+      "rear_elevation": rear_elevation,
+      "left_elevation": left_elevation
     }
 
     Object.assign(this.questionnaireService.questionnaireForm, value, object);
@@ -76,7 +76,7 @@ export class StepTwentysevenComponent implements OnInit {
 
   // Back
   back() {
-    this.router.navigate(['additional-picture']);
+    this.router.navigate(['left_elevation']);
   }
 
 }

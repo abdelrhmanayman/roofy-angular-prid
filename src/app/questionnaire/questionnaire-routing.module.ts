@@ -14,19 +14,19 @@ const routes: Routes = [
     component: StepOneComponent
   },
   {
-    path: 'front-picture',
+    path: 'front-elevation',
     component: UploadPicturesComponent
   },
   {
-    path: 'back-picture',
+    path: 'right-elevation',
     component: BackPictureComponent
   },
   {
-    path: 'rear-picture',
+    path: 'rear-elevation',
     component: RearPictureComponent
   },
   {
-    path: 'additional-picture',
+    path: 'left-elevation',
     component: AdditionalPictureComponent
   },
   {

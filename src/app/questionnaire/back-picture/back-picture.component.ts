@@ -37,14 +37,14 @@ export class BackPictureComponent implements OnInit {
       this.router.navigate(['welcome']);
     }
 
-    let back_picture = localStorage.getItem('back_picture');
+    let right_elevation = localStorage.getItem('right_elevation');
 
     this.uploadPictures = this.fb.group({
-      back_picture: ['']
+      right_elevation: ['']
     });
 
     if (this.questionnaireService.questionnaireForm) {
-      this.uploadPictures.patchValue({ back_picture });
+      this.uploadPictures.patchValue({ right_elevation });
     }
 
     // Create the file uploader, wire it to upload to your account
@@ -99,7 +99,7 @@ export class BackPictureComponent implements OnInit {
           this.responses[existingId] = Object.assign(this.responses[existingId], fileItem);
 
           // Saves a picture url to local storage
-          localStorage.setItem('back_picture', fileItem.data.secure_url);
+          localStorage.setItem('right_elevation', fileItem.data.secure_url);
 
           // Adds class to upload image label
           let element = document.getElementById('upload-label');
@@ -148,7 +148,7 @@ export class BackPictureComponent implements OnInit {
       console.log(`Deleted image - ${data.public_id} ${response.result}`);
     });
 
-    localStorage.removeItem('back_picture');
+    localStorage.removeItem('right_elevation');
 
     // Adds class to upload image label
     let element = document.getElementById('upload-label');
@@ -162,18 +162,18 @@ export class BackPictureComponent implements OnInit {
   // Submits pictures
   submit({ value, valid }) {
     setTimeout(() => {
-      this.router.navigate(['rear-picture']);
+      this.router.navigate(['rear-elevation']);
     }, 100);
   }
 
   // Back
   back() {
-    this.router.navigate(['front-picture']);
+    this.router.navigate(['front-elevation']);
   }
 
   // Image preview
-  get back_picture(): string {
-    return localStorage.getItem('back_picture');
+  get right_elevation(): string {
+    return localStorage.getItem('right_elevation');
   }
 
 }

@@ -47,7 +47,7 @@ export class StepOneComponent implements OnInit {
   // Submits step one form
   submit({ value, valid }) {
     setTimeout(() => {
-      this.router.navigate(['front-picture']);
+      this.router.navigate(['front-elevation']);
     }, 100);
   }
 

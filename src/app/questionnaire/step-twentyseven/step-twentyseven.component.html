@@ -1,11 +1,12 @@
 <app-questionnaire>
     <form [ngClass]="'additional_information container'" (ngSubmit)="submit(stepTwentyseven)" [formGroup]="stepTwentyseven">
         <div class="text-center">
-            <app-form-header text="Things we need to know (pipe jacks, turtle vents, additional penetrations, etc.)">
-            </app-form-header>
-
             <div class="row">
                 <div class="col-lg-12">
+                    <header class="top-header">
+                        <p>Things we need to know<br> <small>pipe jacks, turtle vents, additional penetrations</small></p>
+                    </header>
+
                     <textarea formControlName="thingsWeNeedToKNow" class="roofy-input form-text-input"></textarea><br>
 
                     <small class="validation-alert"
@@ -15,13 +16,10 @@
                 </div>
             </div>
 
-            <app-form-header text="Please provide any additional questions, comments, observations or
-                customizations in respect to this order."></app-form-header>
-
             <div class="row">
-                <div class="col-lg-12">
-                    <textarea formControlName="additionalInformation" class="roofy-input form-text-input"></textarea>
-                </div>
+                <!--<div class="col-lg-12">
+                    <textarea placeholder="Please provide additional comment" formControlName="additionalInformation" class="roofy-input form-text-input"></textarea>
+                </div>-->
 
                 <div class="col-lg-12 mt-4">
                     <p class="text-danger" *ngIf="errorMessage">{{ errorMessage }}</p>

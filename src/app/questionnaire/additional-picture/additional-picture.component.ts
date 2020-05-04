@@ -38,14 +38,14 @@ export class AdditionalPictureComponent implements OnInit {
       this.router.navigate(['welcome']);
     }
 
-    let additional_picture = localStorage.getItem('additional_picture');
+    let left_elevation = localStorage.getItem('left_elevation');
 
     this.uploadPictures = this.fb.group({
-      additional_picture: ['']
+      left_elevation: ['']
     });
 
     if (this.questionnaireService.questionnaireForm) {
-      this.uploadPictures.patchValue({ additional_picture });
+      this.uploadPictures.patchValue({ left_elevation });
     }
 
     // Create the file uploader, wire it to upload to your account
@@ -100,7 +100,7 @@ export class AdditionalPictureComponent implements OnInit {
           this.responses[existingId] = Object.assign(this.responses[existingId], fileItem);
 
           // Saves a picture url to local storage
-          localStorage.setItem('additional_picture', fileItem.data.secure_url);
+          localStorage.setItem('left_elevation', fileItem.data.secure_url);
 
           // Adds class to upload image label
           let element = document.getElementById('upload-label');
@@ -149,7 +149,7 @@ export class AdditionalPictureComponent implements OnInit {
       console.log(`Deleted image - ${data.public_id} ${response.result}`);
     });
 
-    localStorage.removeItem('additional_picture');
+    localStorage.removeItem('left_elevation');
 
     // Adds class to upload image label
     let element = document.getElementById('upload-label');
@@ -169,12 +169,12 @@ export class AdditionalPictureComponent implements OnInit {
 
   // Back
   back() {
-    this.router.navigate(['rear-picture']);
+    this.router.navigate(['rear-elevation']);
   }
 
   // Image preview
-  get additional_picture(): string {
-    return localStorage.getItem('additional_picture');
+  get left_elevation(): string {
+    return localStorage.getItem('left_elevation');
   }
 
 }

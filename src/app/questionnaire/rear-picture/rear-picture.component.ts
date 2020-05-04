@@ -38,14 +38,14 @@ export class RearPictureComponent implements OnInit {
       this.router.navigate(['welcome']);
     }
 
-    let rear_picture = localStorage.getItem('rear_picture');
+    let rear_elevation = localStorage.getItem('rear_elevation');
 
     this.uploadPictures = this.fb.group({
-      rear_picture: ['']
+      rear_elevation: ['']
     });
 
     if (this.questionnaireService.questionnaireForm) {
-      this.uploadPictures.patchValue({ rear_picture });
+      this.uploadPictures.patchValue({ rear_elevation });
     }
 
     // Create the file uploader, wire it to upload to your account
@@ -100,7 +100,7 @@ export class RearPictureComponent implements OnInit {
           this.responses[existingId] = Object.assign(this.responses[existingId], fileItem);
 
           // Saves a picture url to local storage
-          localStorage.setItem('rear_picture', fileItem.data.secure_url);
+          localStorage.setItem('rear_elevation', fileItem.data.secure_url);
 
           // Adds class to upload image label
           let element = document.getElementById('upload-label');
@@ -149,7 +149,7 @@ export class RearPictureComponent implements OnInit {
       console.log(`Deleted image - ${data.public_id} ${response.result}`);
     });
 
-    localStorage.removeItem('rear_picture');
+    localStorage.removeItem('rear_elevation');
 
     // Adds class to upload image label
     let element = document.getElementById('upload-label');
@@ -163,18 +163,18 @@ export class RearPictureComponent implements OnInit {
   // Submits pictures
   submit({ value, valid }) {
     setTimeout(() => {
-      this.router.navigate(['additional-picture']);
+      this.router.navigate(['left-elevation']);
     }, 100);
   }
 
   // Back
   back() {
-    this.router.navigate(['back-picture']);
+    this.router.navigate(['right-elevation']);
   }
 
   // Image preview
-  get rear_picture(): string {
-    return localStorage.getItem('rear_picture');
+  get rear_elevation(): string {
+    return localStorage.getItem('rear_elevation');
   }
 
 }

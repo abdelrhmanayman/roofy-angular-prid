@@ -38,14 +38,14 @@ export class UploadPicturesComponent implements OnInit {
       this.router.navigate(['welcome']);
     }
 
-    let front_picture = localStorage.getItem('front_picture');
+    let front_elevation = localStorage.getItem('front_elevation');
 
     this.uploadPictures = this.fb.group({
-      front_picture: ['']
+      front_elevation: ['']
     });
 
     if (this.questionnaireService.questionnaireForm) {
-      this.uploadPictures.patchValue({ front_picture });
+      this.uploadPictures.patchValue({ front_elevation });
     }
 
     // Create the file uploader, wire it to upload to your account
@@ -100,7 +100,7 @@ export class UploadPicturesComponent implements OnInit {
           this.responses[existingId] = Object.assign(this.responses[existingId], fileItem);
 
           // Saves a picture url to local storage
-          localStorage.setItem('front_picture', fileItem.data.secure_url);
+          localStorage.setItem('front_elevation', fileItem.data.secure_url);
 
           // Adds class to upload image label
           let element = document.getElementById('upload-label');
@@ -149,7 +149,7 @@ export class UploadPicturesComponent implements OnInit {
       console.log(`Deleted image - ${data.public_id} ${response.result}`);
     });
 
-    localStorage.removeItem('front_picture');
+    localStorage.removeItem('front_elevation');
 
     // Adds class to upload image label
     let element = document.getElementById('upload-label');
@@ -163,7 +163,7 @@ export class UploadPicturesComponent implements OnInit {
   // Submits pictures
   submit({ value, valid }) {
     setTimeout(() => {
-      this.router.navigate(['back-picture']);
+      this.router.navigate(['right-elevation']);
     }, 100);
   }
 
@@ -173,8 +173,8 @@ export class UploadPicturesComponent implements OnInit {
   }
 
   // Image preview
-  get front_picture(): string {
-    return localStorage.getItem('front_picture');
+  get front_elevation(): string {
+    return localStorage.getItem('front_elevation');
   }
 
 }
