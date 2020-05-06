@@ -62,7 +62,7 @@ export class StepTwentysevenComponent implements OnInit {
         setTimeout(() => {
           this.successMessage = false;
           localStorage.clear();
-          window.location.href = 'https://payment.roofy.com/order-estimate/';
+          window.location.href = 'https://payment.ro4242424242424242ofy.com/order-estimate/';
         }, 6000)
       }, (err) => {
         this.errorMessage = 'This form has not been submitted. Please try again.'
@@ -76,7 +76,7 @@ export class StepTwentysevenComponent implements OnInit {
 
   // Back
   back() {
-    this.router.navigate(['left_elevation']);
+    this.router.navigate(['left-elevation']);
   }
 
 }
