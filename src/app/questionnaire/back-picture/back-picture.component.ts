@@ -176,4 +176,8 @@ export class BackPictureComponent implements OnInit {
     return localStorage.getItem('right_elevation');
   }
 
+  public skip() {
+    window.location.href = 'additional-information/';
+  }
+
 }

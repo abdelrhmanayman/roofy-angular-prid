@@ -177,4 +177,8 @@ export class AdditionalPictureComponent implements OnInit {
     return localStorage.getItem('left_elevation');
   }
 
+  public skip() {
+    window.location.href = 'additional-information/';
+  }
+
 }

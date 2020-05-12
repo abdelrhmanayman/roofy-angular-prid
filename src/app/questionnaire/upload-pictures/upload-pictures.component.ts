@@ -177,5 +177,9 @@ export class UploadPicturesComponent implements OnInit {
     return localStorage.getItem('front_elevation');
   }
 
+  public skip() {
+    window.location.href = 'additional-information/';
+  }
+
 }
 

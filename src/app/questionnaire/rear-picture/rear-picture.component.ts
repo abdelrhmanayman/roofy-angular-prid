@@ -177,5 +177,9 @@ export class RearPictureComponent implements OnInit {
     return localStorage.getItem('rear_elevation');
   }
 
+  public skip() {
+    window.location.href = 'additional-information/';
+  }
+
 }
 

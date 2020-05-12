@@ -53,11 +53,14 @@
             <div class="row">
                 <div class="form-button-control">
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-4">
                             <button type="button" (click)="back()" class="btn btn-ctrl"><img src="/assets/back.png" />
                                 Back</button>
                         </div>
-                        <div class="col-6">
+                        <div class="col-4">
+                            <button (click)="skip()" type="button" class="btn btn-ctrl">Skip All</button>
+                        </div>
+                        <div class="col-4">
                             <button [disabled]="uploadPictures.invalid" type="submit" class="btn btn-ctrl"><img
                                     src="/assets/next.png" /> Next</button>
                         </div>
