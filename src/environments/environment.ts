@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'http://localhost:3004/',
-  pkgsDefaultUrl: 'https://roofy.com/packages/',
+  baseUrl: 'https://stage-api.roofy.com/',
+  pkgsDefaultUrl: 'https://payment.roofy.com/order-estimate/',
   cloudinaryUrl:'https://943488587153826:ZN_P45g6p0NX8iwep79EcJfTObc@roofy'
 };
 

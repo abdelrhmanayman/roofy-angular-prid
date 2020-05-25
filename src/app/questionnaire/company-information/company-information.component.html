@@ -1,0 +1,51 @@
+<app-questionnaire>
+    <form [ngClass]="'company_information container'" (ngSubmit)="submit(companyInformation)"
+        [formGroup]="companyInformation">
+        <div class="text-center">
+            <div class="row">
+                <div class="col-lg-12">
+                    <header class="top-header">
+                        <p>Company Information</p>
+                    </header>
+
+                    <p class="mt-4"><small>Name</small></p>
+                    <input formControlName="companyName" class="roofy-input form-text-input"><br>
+
+                    <small class="mt-2 validation-alert"
+                        *ngIf="companyInformation.get('companyName').touched && companyInformation.get('companyName').hasError('required')">
+                        This field is required!
+                    </small>
+
+                    <p class="mt-4"><small>Address</small></p>
+                    <input ngx-google-places-autocomplete [options]='options' #placesRef="ngx-places"
+                                    (onAddressChange)="handleAddressChange($event)" formControlName="companyAddress"
+                                    type="text" class="roofy-input form-text-input"><br>
+
+                    <small class="mt-2 validation-alert"
+                        *ngIf="companyInformation.get('companyAddress').touched && companyInformation.get('companyAddress').hasError('required')">
+                        This field is required!
+                    </small>
+                </div>
+            </div>
+        </div>
+
+        <!--<app-navigation-ctrl hasBack="true"></app-navigation-ctrl>-->
+
+        <div class="form-button-control">
+            <div class="row">
+                <div class="form-button-control">
+                    <div class="row">
+                        <div class="col-6">
+                            <button type="button" (click)="back()" class="btn btn-ctrl"><img src="/assets/back.png" />
+                                Back</button>
+                        </div>
+                        <div class="col-6">
+                            <button [disabled]="companyInformation.invalid" type="submit" class="btn btn-ctrl"><img
+                                    src="/assets/next.png" /> Next</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</app-questionnaire>

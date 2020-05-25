@@ -2,16 +2,16 @@ import { Component, OnInit, Input, NgZone } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { QuestionnaireService } from '../../questionnaire/questionnaire.service';
+import { QuestionnaireService } from '../questionnaire.service';
 import { FileUploader, FileUploaderOptions, ParsedResponseHeaders } from 'ng2-file-upload';
 import { Cloudinary } from '@cloudinary/angular-5.x';
 
 @Component({
-  selector: 'app-additional-picture',
-  templateUrl: './additional-picture.component.html',
-  styleUrls: ['./additional-picture.component.scss']
+  selector: 'app-front-picture',
+  templateUrl: './front-picture.component.html',
+  styleUrls: ['./front-picture.component.scss']
 })
-export class AdditionalPictureComponent implements OnInit {
+export class FrontPictureComponent implements OnInit {
 
   uploadPictures: FormGroup;
 
@@ -35,17 +35,17 @@ export class AdditionalPictureComponent implements OnInit {
   ngOnInit() {
     // Resets the form to its initial state if the form is empty
     if (Object.keys(this.questionnaireService.questionnaireForm).length < 0) {
-      this.router.navigate(['welcome']);
+      this.router.navigate(['/']);
     }
 
-    let left_elevation = localStorage.getItem('left_elevation');
+    let front_elevation = localStorage.getItem('front_elevation');
 
     this.uploadPictures = this.fb.group({
-      left_elevation: ['']
+      front_elevation: ['']
     });
 
     if (this.questionnaireService.questionnaireForm) {
-      this.uploadPictures.patchValue({ left_elevation });
+      this.uploadPictures.patchValue({ front_elevation });
     }
 
     // Create the file uploader, wire it to upload to your account
@@ -100,7 +100,7 @@ export class AdditionalPictureComponent implements OnInit {
           this.responses[existingId] = Object.assign(this.responses[existingId], fileItem);
 
           // Saves a picture url to local storage
-          localStorage.setItem('left_elevation', fileItem.data.secure_url);
+          localStorage.setItem('front_elevation', fileItem.data.secure_url);
 
           // Adds class to upload image label
           let element = document.getElementById('upload-label');
@@ -149,7 +149,7 @@ export class AdditionalPictureComponent implements OnInit {
       console.log(`Deleted image - ${data.public_id} ${response.result}`);
     });
 
-    localStorage.removeItem('left_elevation');
+    localStorage.removeItem('front_elevation');
 
     // Adds class to upload image label
     let element = document.getElementById('upload-label');
@@ -160,25 +160,26 @@ export class AdditionalPictureComponent implements OnInit {
     this.hasBaseDropZoneOver = e;
   }
 
-  // Submits pictures
+  // Submits front picture
   submit({ value, valid }) {
     setTimeout(() => {
-      this.router.navigate(['additional-information']);
+      this.router.navigate(['right-elevation']);
     }, 100);
   }
 
   // Back
   back() {
-    this.router.navigate(['rear-elevation']);
+    this.router.navigate(['/']);
   }
 
   // Image preview
-  get left_elevation(): string {
-    return localStorage.getItem('left_elevation');
+  get front_elevation(): string {
+    return localStorage.getItem('front_elevation');
   }
 
   public skip() {
-    window.location.href = 'additional-information/';
+    this.router.navigate(['company-logo']);
   }
 
 }
+

@@ -51,6 +51,11 @@ textarea {
     cursor: pointer;
 }
 
+.orange-btn:disabled,
+.orange-btn[disabled] {
+    opacity: 0.8;
+}
+
 .orange-btn:hover {
     background: #0124a7;
 }

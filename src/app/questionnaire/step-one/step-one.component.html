@@ -23,11 +23,11 @@
                                 </h1>
                             </div>
 
-                            <form (ngSubmit)="submit(stepOne)" [formGroup]="stepOne" class="text-center">
+                            <form (ngSubmit)="submit()" [formGroup]="stepOne" class="text-center">
                                 <input ngx-google-places-autocomplete [options]='options' #placesRef="ngx-places"
                                     (onAddressChange)="handleAddressChange($event)" formControlName="address"
                                     type="text" class="form-input mr-2">
-                                <input class="orange-btn" type="submit">
+                                <button [disabled]="stepOne.invalid" type="submit" class="orange-btn">Next</button>
                             </form>
 
                             <p class="insurance mt-4">Insurance-approved roof estimates... <em>FAST!</em></p>

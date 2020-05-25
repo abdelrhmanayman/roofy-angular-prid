@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BackPictureComponent } from './back-picture.component';
+import { CompanyInformationComponent } from './company-information.component';
 
-describe('BackPictureComponent', () => {
-  let component: BackPictureComponent;
-  let fixture: ComponentFixture<BackPictureComponent>;
+describe('CompanyInformationComponent', () => {
+  let component: CompanyInformationComponent;
+  let fixture: ComponentFixture<CompanyInformationComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BackPictureComponent ]
+      declarations: [ CompanyInformationComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BackPictureComponent);
+    fixture = TestBed.createComponent(CompanyInformationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

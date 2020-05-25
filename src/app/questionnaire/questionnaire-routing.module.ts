@@ -2,11 +2,13 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { StepOneComponent } from './step-one/step-one.component';
-import { UploadPicturesComponent } from './upload-pictures/upload-pictures.component';
-import { BackPictureComponent } from './back-picture/back-picture.component';
+import { FrontPictureComponent } from './front-picture/front-picture.component';
+import { RightPictureComponent } from './right-picture/right-picture.component';
 import { RearPictureComponent } from './rear-picture/rear-picture.component';
-import { AdditionalPictureComponent } from './additional-picture/additional-picture.component';
-import { StepTwentysevenComponent } from './step-twentyseven/step-twentyseven.component';
+import { LeftPictureComponent } from './left-picture/left-picture.component';
+import { CompanyLogoComponent } from './company-logo/company-logo.component';
+import { CompanyInformationComponent } from './company-information/company-information.component';
+import { AdditionalInformationComponent } from './additional-information/additional-information.component';
 
 const routes: Routes = [
   {
@@ -15,11 +17,11 @@ const routes: Routes = [
   },
   {
     path: 'front-elevation',
-    component: UploadPicturesComponent
+    component: FrontPictureComponent
   },
   {
     path: 'right-elevation',
-    component: BackPictureComponent
+    component: RightPictureComponent
   },
   {
     path: 'rear-elevation',
@@ -27,11 +29,19 @@ const routes: Routes = [
   },
   {
     path: 'left-elevation',
-    component: AdditionalPictureComponent
+    component: LeftPictureComponent
+  },
+  {
+    path: 'company-logo',
+    component: CompanyLogoComponent
+  },
+  {
+    path: 'company-information',
+    component: CompanyInformationComponent
   },
   {
     path: 'additional-information',
-    component: StepTwentysevenComponent
+    component: AdditionalInformationComponent
   }
 ];
 

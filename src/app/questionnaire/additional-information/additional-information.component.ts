@@ -4,11 +4,11 @@ import { Router } from '@angular/router';
 import { QuestionnaireService } from '../questionnaire.service';
 
 @Component({
-  selector: 'app-step-twentyseven',
-  templateUrl: './step-twentyseven.component.html',
-  styleUrls: ['./step-twentyseven.component.scss']
+  selector: 'app-additional-information',
+  templateUrl: './additional-information.component.html',
+  styleUrls: ['./additional-information.component.scss']
 })
-export class StepTwentysevenComponent implements OnInit {
+export class AdditionalInformationComponent implements OnInit {
 
   stepTwentyseven: FormGroup;
 
@@ -24,13 +24,12 @@ export class StepTwentysevenComponent implements OnInit {
 
   ngOnInit() {
     // Resets the form to its initial state if the form is empty
-    if (Object.keys(this.questionnaireService.questionnaireForm).length < 0) {
-      this.router.navigate(['welcome']);
+    if (Object.keys(this.questionnaireService.questionnaireForm).length == 0) {
+      this.router.navigate(['/']);
     }
 
     this.stepTwentyseven = this.fb.group({
-      thingsWeNeedToKNow: ['', [Validators.required]],
-      additionalInformation: ['']
+      thingsWeNeedToKnow: ['', [Validators.required]]
     });
 
     if (this.questionnaireService.questionnaireForm) {
@@ -38,21 +37,35 @@ export class StepTwentysevenComponent implements OnInit {
     }
   }
 
-  // Submits step twentyseven form
+  private clearEmptyValues(object: object): any {
+    for (let key in object) {
+      if (object[key] === '' || object[key] === true || object[key] === null) {
+        delete object[key]
+      }
+    }
+  }
+
+  // Submits additional information
   submit({ value, valid }) {
     let address = localStorage.getItem('address');
     let front_elevation = localStorage.getItem('front_elevation');
     let right_elevation = localStorage.getItem('right_elevation');
     let rear_elevation = localStorage.getItem('rear_elevation');
     let left_elevation = localStorage.getItem('left_elevation');
+    let company_logo = localStorage.getItem('company_logo');
+    let company_address = localStorage.getItem('company_address');
 
     let object = {
       "address": address,
       "front_elevation": front_elevation,
       "right_elevation": right_elevation,
       "rear_elevation": rear_elevation,
-      "left_elevation": left_elevation
+      "left_elevation": left_elevation,
+      "companyLogo": company_logo,
+      "companyAddress": company_address
     }
+
+    this.clearEmptyValues(object);
 
     Object.assign(this.questionnaireService.questionnaireForm, value, object);
 
@@ -76,7 +89,7 @@ export class StepTwentysevenComponent implements OnInit {
 
   // Back
   back() {
-    this.router.navigate(['left-elevation']);
+    this.router.navigate(['company-information']);
   }
 
 }

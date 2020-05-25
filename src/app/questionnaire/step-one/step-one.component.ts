@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { QuestionnaireService } from '../../questionnaire/questionnaire.service';
 
@@ -24,28 +24,19 @@ export class StepOneComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    // Resets the form to its initial state if the form is empty
-    if (Object.keys(this.questionnaireService.questionnaireForm).length < 0) {
-      this.router.navigate(['welcome']);
-    }
-
-    let address = localStorage.getItem('address');
+    const value_address = localStorage.getItem('address');
 
     this.stepOne = this.fb.group({
-      address: ['']
+      address: [value_address || '', [Validators.required]]
     });
-
-    if (this.questionnaireService.questionnaireForm) {
-      this.stepOne.patchValue({address});
-    }
   }
 
   handleAddressChange(Event) {
     localStorage.setItem('address', Event.formatted_address);
   }
 
-  // Submits step one form
-  submit({ value, valid }) {
+  // Submits address
+  submit() {
     setTimeout(() => {
       this.router.navigate(['front-elevation']);
     }, 100);

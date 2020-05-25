@@ -7,11 +7,11 @@ import { FileUploader, FileUploaderOptions, ParsedResponseHeaders } from 'ng2-fi
 import { Cloudinary } from '@cloudinary/angular-5.x';
 
 @Component({
-  selector: 'app-rear-picture',
-  templateUrl: './rear-picture.component.html',
-  styleUrls: ['./rear-picture.component.scss']
+  selector: 'app-company-logo',
+  templateUrl: './company-logo.component.html',
+  styleUrls: ['./company-logo.component.scss']
 })
-export class RearPictureComponent implements OnInit {
+export class CompanyLogoComponent implements OnInit {
 
   uploadPictures: FormGroup;
 
@@ -38,14 +38,14 @@ export class RearPictureComponent implements OnInit {
       this.router.navigate(['/']);
     }
 
-    let rear_elevation = localStorage.getItem('rear_elevation');
+    let company_logo = localStorage.getItem('company_logo');
 
     this.uploadPictures = this.fb.group({
-      rear_elevation: ['']
+      company_logo: ['']
     });
 
     if (this.questionnaireService.questionnaireForm) {
-      this.uploadPictures.patchValue({ rear_elevation });
+      this.uploadPictures.patchValue({ company_logo });
     }
 
     // Create the file uploader, wire it to upload to your account
@@ -100,7 +100,7 @@ export class RearPictureComponent implements OnInit {
           this.responses[existingId] = Object.assign(this.responses[existingId], fileItem);
 
           // Saves a picture url to local storage
-          localStorage.setItem('rear_elevation', fileItem.data.secure_url);
+          localStorage.setItem('company_logo', fileItem.data.secure_url);
 
           // Adds class to upload image label
           let element = document.getElementById('upload-label');
@@ -149,7 +149,7 @@ export class RearPictureComponent implements OnInit {
       console.log(`Deleted image - ${data.public_id} ${response.result}`);
     });
 
-    localStorage.removeItem('rear_elevation');
+    localStorage.removeItem('company_logo');
 
     // Adds class to upload image label
     let element = document.getElementById('upload-label');
@@ -160,25 +160,21 @@ export class RearPictureComponent implements OnInit {
     this.hasBaseDropZoneOver = e;
   }
 
-  // Submits rear picture
+  // Submits logo
   submit({ value, valid }) {
     setTimeout(() => {
-      this.router.navigate(['left-elevation']);
+      this.router.navigate(['company-information']);
     }, 100);
   }
 
   // Back
   back() {
-    this.router.navigate(['right-elevation']);
+    this.router.navigate(['left-elevation']);
   }
 
   // Image preview
-  get rear_elevation(): string {
-    return localStorage.getItem('rear_elevation');
-  }
-
-  public skip() {
-    this.router.navigate(['company-logo']);
+  get company_logo(): string {
+    return localStorage.getItem('company_logo');
   }
 
 }

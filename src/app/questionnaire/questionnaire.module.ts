@@ -4,18 +4,31 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GooglePlaceModule } from 'ngx-google-places-autocomplete';
 import { FileUploadModule } from 'ng2-file-upload';
 
-import { QuestionnaireRoutingModule } from './questionnaire-routing.module';
-import { StepOneComponent } from './step-one/step-one.component';
-import { StepTwentysevenComponent } from './step-twentyseven/step-twentyseven.component';
-import { UploadPicturesComponent } from './upload-pictures/upload-pictures.component';
-import { RearPictureComponent } from './rear-picture/rear-picture.component';
-import { AdditionalPictureComponent } from './additional-picture/additional-picture.component';
-import { QuestionnaireComponent } from './questionnaire.component';
-import { BackPictureComponent } from './back-picture/back-picture.component';
 import { SharedModule } from '../shared/shared.module';
+import { QuestionnaireRoutingModule } from './questionnaire-routing.module';
+
+import { QuestionnaireComponent } from './questionnaire.component';
+import { StepOneComponent } from './step-one/step-one.component';
+import { FrontPictureComponent } from './front-picture/front-picture.component';
+import { RightPictureComponent } from './right-picture/right-picture.component';
+import { RearPictureComponent } from './rear-picture/rear-picture.component';
+import { LeftPictureComponent } from './left-picture/left-picture.component';
+import { CompanyLogoComponent } from './company-logo/company-logo.component';
+import { CompanyInformationComponent } from './company-information/company-information.component';
+import { AdditionalInformationComponent } from './additional-information/additional-information.component';
 
 @NgModule({
-  declarations: [StepOneComponent, StepTwentysevenComponent, QuestionnaireComponent, UploadPicturesComponent, RearPictureComponent, AdditionalPictureComponent, BackPictureComponent],
+  declarations: [
+    QuestionnaireComponent,
+    StepOneComponent, 
+    FrontPictureComponent, 
+    RightPictureComponent,
+    RearPictureComponent, 
+    LeftPictureComponent,  
+    CompanyLogoComponent, 
+    CompanyInformationComponent,
+    AdditionalInformationComponent
+  ],
   imports: [
     CommonModule,
     SharedModule,

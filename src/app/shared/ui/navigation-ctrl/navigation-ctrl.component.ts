@@ -19,6 +19,6 @@ export class NavigationCtrlComponent implements OnInit {
   }
 
   public skip() {
-    window.location.href = 'https://roofy.com/additional-information/';
+    window.location.href = 'https://roofy.com/company-logo/';
   }
 }
