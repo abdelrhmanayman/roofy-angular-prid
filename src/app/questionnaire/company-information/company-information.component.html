@@ -5,10 +5,10 @@
             <div class="row">
                 <div class="col-lg-12">
                     <header class="top-header">
-                        <p>Company Information</p>
+                        <p>Insurance Claim?</p>
                     </header>
 
-                    <p class="mt-4"><small>Name</small></p>
+                    <p class="mt-4"><small>Company Name</small></p>
                     <input formControlName="companyName" class="roofy-input form-text-input"><br>
 
                     <small class="mt-2 validation-alert"
@@ -16,13 +16,12 @@
                         This field is required!
                     </small>
 
-                    <p class="mt-4"><small>Address</small></p>
-                    <input ngx-google-places-autocomplete [options]='options' #placesRef="ngx-places"
-                                    (onAddressChange)="handleAddressChange($event)" formControlName="companyAddress"
-                                    type="text" class="roofy-input form-text-input"><br>
+                    <p class="mt-4"><small>Claim Number</small></p>
+                    <input (onAddressChange)="handleAddressChange($event)"
+                        formControlName="claimNumber" type="text" class="roofy-input form-text-input"><br>
 
                     <small class="mt-2 validation-alert"
-                        *ngIf="companyInformation.get('companyAddress').touched && companyInformation.get('companyAddress').hasError('required')">
+                        *ngIf="companyInformation.get('claimNumber').touched && companyInformation.get('claimNumber').hasError('required')">
                         This field is required!
                     </small>
                 </div>

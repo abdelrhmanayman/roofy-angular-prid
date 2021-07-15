@@ -30,11 +30,11 @@ export class CompanyInformationComponent implements OnInit {
     }
 
     const value_name = JSON.parse(localStorage.getItem('questionnaire'));
-    const value_address = localStorage.getItem('company_address');
+    const value_address = localStorage.getItem('claim_number');
 
     this.companyInformation = this.fb.group({
       companyName: [value_name && value_name.companyName || '', [Validators.required]],
-      companyAddress: [value_address || '', [Validators.required]]
+      claimNumber: [value_address || '', [Validators.required]]
     });
 
     if (this.questionnaireService.questionnaireForm) {
@@ -47,7 +47,7 @@ export class CompanyInformationComponent implements OnInit {
   }
 
   handleAddressChange(Event) {
-    localStorage.setItem('company_address', Event.formatted_address);
+    localStorage.setItem('claim_number', Event.formatted_address);
   }
 
   // Submits company information

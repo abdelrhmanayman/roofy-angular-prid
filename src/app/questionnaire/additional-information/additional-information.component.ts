@@ -53,7 +53,7 @@ export class AdditionalInformationComponent implements OnInit {
     let rear_elevation = localStorage.getItem('rear_elevation');
     let left_elevation = localStorage.getItem('left_elevation');
     let company_logo = localStorage.getItem('company_logo');
-    let company_address = localStorage.getItem('company_address');
+    let claimNumber = localStorage.getItem('claim_number');
 
     let object = {
       "address": address,
@@ -62,7 +62,7 @@ export class AdditionalInformationComponent implements OnInit {
       "rear_elevation": rear_elevation,
       "left_elevation": left_elevation,
       "companyLogo": company_logo,
-      "companyAddress": company_address
+      "claimNumber": claimNumber
     }
 
     this.clearEmptyValues(object);

@@ -6,6 +6,6 @@ export class QuestionnaireForm {
     left_elevation: string;
     companyLogo: string;
     companyName: string;
-    companyAddress: string;
+    claimNumber: string;
     thingsWeNeedToKnow: string;
 }
