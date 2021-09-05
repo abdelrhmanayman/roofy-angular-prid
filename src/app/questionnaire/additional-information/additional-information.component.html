@@ -16,11 +16,6 @@
                         This field is required!
                     </small>
                 </div>
-                <br />
-                <br />
-                <br />
-                <br />
-
                 <div class="col-lg-12">
                     <div id="direct_upload" ng2FileDrop [uploader]="uploader" (fileOver)="fileOverBase($event)"
                         [ngClass]="{'nv-file-over': hasBaseDropZoneOver}">
@@ -34,11 +29,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="gallery">
-                            <div *ngFor="let photo of addtional_photos" class="gallery__item">
-                                <img src={{photo}} alt="addtional_photos">
-                            </div>
-                        </div>
+                    </div>
+                </div>
+                <div class="gallery">
+                    <div *ngFor="let photo of addtional_photos" class="gallery__item">
+                        <img src={{photo}} alt="addtional_photos">
                     </div>
                 </div>
             </div>

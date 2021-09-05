@@ -121,11 +121,6 @@ export class AdditionalInformationComponent implements OnInit {
             "addtional_photos",
             JSON.stringify(addtionalPhotos)
           );
-
-          // Adds class to upload image label
-          let element = document.getElementById("upload-label");
-          element.classList.add("hide");
-          element.classList.remove("show");
         } else {
           // Creates new response
           this.responses.push(fileItem);
