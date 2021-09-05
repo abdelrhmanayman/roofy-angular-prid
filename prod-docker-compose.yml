@@ -1,0 +1,26 @@
+version: '3.1'
+services:
+  roofy-angular-web-container:
+    container_name: 'roofy-angular-web-container'
+    build:
+      context: .
+      dockerfile: prod-roofy-frontend-dockerfile.dev
+    restart: always
+    ports:
+      - "4190:80"
+    volumes:
+      - '.:/home/app'
+      - '/home/app/node_modules'
+      - '/home/app/dist'
+      - './default.conf:/etc/nginx/conf.d/default.conf'
+    command: bash -c "npm run server"
+    environment:
+      VIRTUAL_HOST: roofy.com
+      VIRTUAL_PORT: 4190
+      LETSENCRYPT_HOST: roofy.com
+      LETSENCRYPT_EMAIL: carlospcaballero@outlook.com
+      NODE_ENV: production
+networks:
+  default:
+    external:
+      name: nginx-proxy

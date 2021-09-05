@@ -1,0 +1,36 @@
+FROM node:10-alpine
+
+RUN apk add --update \
+    bash \
+    python \
+    python-dev \
+    py-pip \
+    build-base \
+  && pip install virtualenv \
+  && rm -rf /var/cache/apk/*
+
+# Create app directory
+RUN mkdir -p /home/app
+WORKDIR /home/app
+
+
+
+# Install app dependencies
+COPY package.json /home/app
+RUN rm -rf /home/app/node_modules
+RUN npm install -g @angular/cli
+RUN npm install;
+
+
+# Bundle app source
+COPY . /home/app
+RUN npm run build:prod
+run ls
+
+
+
+
+
+EXPOSE 4190
+
+
