@@ -17,13 +17,17 @@
                     </small>
 
                     <p class="mt-4"><small>Claim Number</small></p>
-                    <input (onAddressChange)="handleAddressChange($event)"
-                        formControlName="claimNumber" type="text" class="roofy-input form-text-input"><br>
+                    <input (onAddressChange)="handleAddressChange($event)" formControlName="claimNumber" type="text"
+                        class="roofy-input form-text-input"><br>
 
                     <small class="mt-2 validation-alert"
                         *ngIf="companyInformation.get('claimNumber').touched && companyInformation.get('claimNumber').hasError('required')">
                         This field is required!
                     </small>
+
+                    <p class="mt-4"><small>Customer Name</small></p>
+                    <input (onAddressChange)="handleAddressChange($event)" formControlName="customerName" type="text"
+                        class="roofy-input form-text-input"><br>
                 </div>
             </div>
         </div>

@@ -1,10 +1,12 @@
 <app-questionnaire>
-    <form [ngClass]="'additional_information container'" (ngSubmit)="submit(stepTwentyseven)" [formGroup]="stepTwentyseven">
+    <form [ngClass]="'additional_information container'" (ngSubmit)="submit(stepTwentyseven)"
+        [formGroup]="stepTwentyseven">
         <div class="text-center">
             <div class="row">
                 <div class="col-lg-12">
                     <header class="top-header">
-                        <p>Things we need to know<br> <small>pipe jacks, turtle vents, additional penetrations</small></p>
+                        <p>Things we need to know<br> <small>pipe jacks, turtle vents, additional penetrations</small>
+                        </p>
                     </header>
 
                     <textarea formControlName="thingsWeNeedToKnow" class="roofy-input form-text-input"></textarea><br>
@@ -14,13 +16,34 @@
                         This field is required!
                     </small>
                 </div>
+                <br />
+                <br />
+                <br />
+                <br />
+
+                <div class="col-lg-12">
+                    <div id="direct_upload" ng2FileDrop [uploader]="uploader" (fileOver)="fileOverBase($event)"
+                        [ngClass]="{'nv-file-over': hasBaseDropZoneOver}">
+                        <div class="form_line">
+                            <div class="form_controls">
+                                <div class="upload_button_holder">
+                                    <label id="upload-label" class="upload_button orange-btn" for="fileupload">Add
+                                        More Additional Photos</label>
+                                    <input type="file" id="fileupload" #fileInput ng2FileSelect [style.display]="'none'"
+                                        [uploader]="uploader" (change)="fileInput.value=''" accept="image/*">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery">
+                            <div *ngFor="let photo of addtional_photos" class="gallery__item">
+                                <img src={{photo}} alt="addtional_photos">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="row">
-                <!--<div class="col-lg-12">
-                    <textarea placeholder="Please provide additional comment" formControlName="additionalInformation" class="roofy-input form-text-input"></textarea>
-                </div>-->
-
                 <div class="col-lg-12 mt-4">
                     <p class="text-danger" *ngIf="errorMessage">{{ errorMessage }}</p>
                     <p class="text-success" *ngIf="successMessage">{{ successMessage }}</p>
@@ -28,7 +51,6 @@
             </div>
         </div>
 
-        <!--<app-navigation-ctrl hasBack="true"></app-navigation-ctrl>-->
 
         <div class="form-button-control">
             <div class="row">
